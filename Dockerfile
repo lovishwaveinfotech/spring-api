@@ -1,4 +1,4 @@
 FROM ubuntu
-ADD build/libs/*.jar dockerapp.jar
+ADD build/libs/*.jar app.jar
 EXPOSE 8888
-ENTRYPOINT ["java", "-jar", "dockerapp.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]

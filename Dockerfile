@@ -1,5 +1,6 @@
-FROM ubuntu
-ADD build/libs/*.jar app.jar
-COPY --chown=appuser:appuser target/**.jar /home/appuser/app.jar
-EXPOSE 8888
-ENTRYPOINT ["java", "-jar", "app.jar"]
+FROM openjdk:11
+ARG JAR_FILE=build/libs/journal-0.0.1-SNAPSHOT.jar
+
+COPY ${JAR_FILE} app.jar
+
+ENTRYPOINT ["java", "-jar", "/app.jar"]
